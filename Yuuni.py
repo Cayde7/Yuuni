@@ -1,14 +1,19 @@
 import discord
+import logging
 from discord.ext.commands import bot
 from discord.ext import commands
 import asyncio
 import time
-
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 # Site voor invite https://discordapp.com/oauth2/authorize?client_id=522487838361649152&scope=bot&permissions=8
 
 Token = 'NTIyNDg3ODM4MzYxNjQ5MTUy.DvOjOQ.fS1ib9x8gyQ-4kan_LAZBE-bDgA'
-
-client = discord.Client()   
+client = discord.Client()
 # client = case_insensitive(True)d
 # bot.remove_command('help')
 
@@ -45,31 +50,31 @@ async def on_message(message):
     if message.content.upper().startswith('HELLO'):
         if message.author.id == "272014773162344449":
             await message.channel.send('Hello {0.author.name}'.format(message) + '-sensei')
-        else:    
+        else:
             await message.channel.send('Hello {0.author.name}'.format(message) + '-senpai')
 
     if message.content.upper().startswith('GOODNIGHT'):
         if message.author.id == "272014773162344449":
             await message.channel.send('Goodnight {0.author.name}'.format(message) + '-sensei')
-        else:    
+        else:
             await message.channel.send('Goonight {0.author.name}'.format(message) + '-senpai')
 
     if message.content.upper().startswith('OHAYO'):
         if message.author.id == "272014773162344449":
             await message.channel.send('Ohayo {0.author.name}'.format(message) + '-sensei')
-        else:    
+        else:
             await message.channel.send('Ohayo {0.author.name}'.format(message) + '-senpai')
-    
+
     if message.content.upper().startswith('I LOVE YOU YUUNI'):
         if message.author.id == "272014773162344449":
             await message.channel.send('I love you more then anyone else {0.author.name}'.format(message) + '-sensei :heart_eyes:')
-        else:    
+        else:
             await message.channel.send('I love you too {0.author.name}'.format(message) + '-senpai')
 
     if message.content.upper().startswith('!PING'):
         userName = message.author.name
         await message.channel.send("%s Pong!" % (userName))
-    
+
     if message.content.upper().startswith('!PONG'):
         userName = message.author.name
         await message.channel.send("%s Ping!" % (userName))
