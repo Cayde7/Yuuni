@@ -10,7 +10,7 @@ startup_extensions = [
 ]
 
 client = discord.Client()
-client = commands.Bot(command_prefix=(""),
+client = commands.Bot(command_prefix=("!"),
                       pm_help=True,
                       case_insensitive=True,
                       owner_id=272014773162344449)
