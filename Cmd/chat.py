@@ -23,6 +23,8 @@ class no_erp:
             await message.channel.send("Are u a pervert? :persevere: {0.author.name}".format(message) + "-senpai")
         elif "nani" in text:
             await message.channel.send("Nani The Fuck!?!?")
+        elif "oh my" in text:
+            await message.channel.send("god")
 
 def setup(client):
     client.add_cog(no_erp(client))
