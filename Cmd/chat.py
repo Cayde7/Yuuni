@@ -15,12 +15,14 @@ class no_erp:
             return
         elif "weeaboo" in text or "weeb" in text:
             await message.channel.send("Nobody here is a weeb or a weeaboo.")
-        elif "anime" in text:
-            await message.channel.send("Anime? Which anime?")
-        elif "hello" in text or "hi" in text or "ohayo" in text:
+        elif "hello" in text or "hi" in text:
             await message.channel.send("Hello {0.author.name}".format(message) + "-senpai")
+        elif "ohayo" in text or "ohayōgozaimasu" in text or "ohayō" in text:
+            await message.channel.send("Ohayo {0.author.name}".format(message) + "-senpai")
         elif "ecchi" in text or "hentai" in text:
             await message.channel.send("Are u a pervert? :persevere: {0.author.name}".format(message) + "-senpai")
+        elif "nani" in text:
+            await message.channel.send("Nani The Fuck!?!?")
 
 def setup(client):
     client.add_cog(no_erp(client))
