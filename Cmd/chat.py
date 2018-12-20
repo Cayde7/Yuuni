@@ -15,7 +15,7 @@ class chat:
             return
         elif "weeaboo" in text or "weeb" in text:
             await message.channel.send("Nobody here is a weeb or a weeaboo.")
-        elif "hello" in text or "hi" in text:
+        elif "hello" in text or "hey" in text:
             await message.channel.send("Hello {0.author.name}".format(message) + "-senpai")
         elif "ohayo" in text or "ohayōgozaimasu" in text or "ohayō" in text:
             await message.channel.send("Ohayo {0.author.name}".format(message) + "-senpai")
