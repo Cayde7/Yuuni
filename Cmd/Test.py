@@ -41,5 +41,3 @@ async def playlist(ctx, playlistname, username):
 
 
 client.run('INSERTOKEN')
-
-# El bot de Rythm no hace caso a otros bots. Solución: usar la API de youtube para crear una playlist con las canciones y pasárselo al bot de discord para que el user copie y pegue.
