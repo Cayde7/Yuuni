@@ -2,7 +2,7 @@ import discord
 import re
 from discord.ext import commands
 
-class no_erp:
+class chat:
     def __init__(self, client):
         self.client = client
 
@@ -27,4 +27,4 @@ class no_erp:
             await message.channel.send("god")
 
 def setup(client):
-    client.add_cog(no_erp(client))
+    client.add_cog(chat(client))
