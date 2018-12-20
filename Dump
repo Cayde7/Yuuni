@@ -4,7 +4,7 @@
 # handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 # handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 # logger.addHandler(handler)
-# Site voor invite https://discordapp.com/oauth2/authorize?client_id=522487838361649152&scope=bot&permissions=8
+# 
 
 # @commands.command
 # async def idiot(self, ctx, userName: discord.Member=None):
