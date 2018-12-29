@@ -1,44 +1,40 @@
 import discord
-import datetime
 from discord.ext import commands
 
-class userinfo:
+class help:
 
     def __init__(self, client):
         self.client = client
 
-    @commands.command(aliases=['user', 'info', 'userstats'])
-    async def userinfo(self, ctx, userName: discord.Member=None):
+    @commands.command(pass_context=True)
+    async def help(ctx):
+        author = ctx.message.author
         if not userName:
-            roles = ""
-            for role in ctx.message.author.roles:
-                roles = roles + ("{}\n").format(role)
-            embed=discord.Embed(color=ctx.message.author.color, timestamp=datetime.datetime.now())
-            embed.set_image(url= ctx.message.author.avatar_url)
-            embed.add_field(name="Name: ", value=ctx.message.author.name, inline=True)
-            embed.add_field(name="Nickname: ", value=ctx.message.author.nick, inline=True)
-            embed.add_field(name="Status: ", value=ctx.message.author.status, inline=True)
-            embed.add_field(name="Roles: ", value=roles, inline=True)
-            embed.add_field(name="Created account: ", value=ctx.message.author.created_at.strftime("%Y-%m-%d %H:%M:%S"), inline=True)
-            embed.add_field(name="Joined server: ", value=ctx.message.author.joined_at.strftime("%Y-%m-%d %H:%M:%S"), inline=True)
-            embed.add_field(name="Avatar URL: ", value=ctx.message.author.avatar_url, inline=True)
-            embed.set_footer(text="User ID: " + str(ctx.message.author.id))
-            await ctx.send(content="Here you go " + ctx.message.author.mention + "!", embed=embed)
+            embed=discord.Embed(color="#FA0293")
+            embed.add_field(name="Random word. The random words are:", inline=True)
+            embed.add_field(name="Weeb/Weeabop: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="Hello/hey: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="Ohayo/ohayōgozaimasu/ohayō: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="ecchi/hentai: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="nani: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="oh my: ", value="Yuuni will react on you.", inline=True)
+            embed.add_field(name="!waifu: ", value="Yuuni will pick a random person in the discord server and call it best waifu.", inline=False)
+            embed.add_field(name="!husbando ", value="Yuuni will pick a random person in the discord server and call it best husbando.", inline=False)
+            embed.add_field(name="!userinfo: ", value="Yuuni will give info about the user or someone that he/she calld.", inline=False)
+            await ctx.send_message(author, embed=embed)
         else:
-            roles = ""
-            for role in userName.roles:
-                roles = roles + ("{}\n").format(role)
-            embed=discord.Embed(color=userName.color, timestamp=datetime.datetime.now())
-            embed.set_image(url= userName.avatar_url)
-            embed.add_field(name="Name: ", value=userName.name, inline=True)
-            embed.add_field(name="Nickname: ", value=userName.nick, inline=True)
-            embed.add_field(name="Status: ", value=userName.status, inline=True)
-            embed.add_field(name="Roles: ", value=roles, inline=True)
-            embed.add_field(name="Created account: ", value=userName.created_at.strftime("%Y-%m-%d %H:%M:%S"), inline=True)
-            embed.add_field(name="Joined server: ", value=userName.joined_at.strftime("%Y-%m-%d %H:%M:%S"), inline=True)
-            embed.add_field(name="Avatar URL: ", value=userName.avatar_url, inline=True)
-            embed.set_footer(text="User ID: " + str(userName.id))
-            await ctx.send(content="Here you go " + ctx.message.author.mention + "!", embed=embed)
+            embed=discord.Embed(color="#FA0293")
+            embed.add_field(name="Random word. The random words are:", inline=True)
+            embed.add_field(name="Weeb/Weeabop: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="Hello/hey: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="Ohayo/ohayōgozaimasu/ohayō: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="ecchi/hentai: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="nani: ", value="Yuuni will react on you.", inline=False)
+            embed.add_field(name="oh my: ", value="Yuuni will react on you.", inline=True)
+            embed.add_field(name="!waifu: ", value="Yuuni will pick a random person in the discord server and call it best waifu.", inline=False)
+            embed.add_field(name="!husbando ", value="Yuuni will pick a random person in the discord server and call it best husbando.", inline=False)
+            embed.add_field(name="!userinfo: ", value="Yuuni will give info about the user or someone that he/she calld.", inline=False)
+            await ctx.send_message(author, embed=embed)
 
 def setup(client):
-    client.add_cog(userinfo(client))
+    client.add_cog(help(client))
