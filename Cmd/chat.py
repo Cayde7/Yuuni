@@ -22,8 +22,8 @@ class chat:
         elif "ecchi" in text or "hentai" in text:
             await message.channel.send("Are u a pervert? :persevere: {0.author.name}".format(message) + "-senpai")
         elif "nani" in text:
-            await message.channel.send("Nani The Fuck!?!?")
-        elif "oh my" in text:
+            await message.channel.send("Nani the fuck!?!?")
+        elif "oh" in text and "my" in text:
             await message.channel.send("god")
 
 def setup(client):

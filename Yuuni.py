@@ -7,6 +7,7 @@ startup_extensions = [
 "Cmd.Client",
 "Cmd.Waifu",
 "Cmd.chat",
+"Cmd.Help",
 ]
 
 client = discord.Client()
@@ -16,6 +17,7 @@ client = commands.Bot(command_prefix=("!"),
                       owner_id=272014773162344449)
 
 client.remove_command('help')
+client.load_extension("jishaku")
 
 async def background_loop():
     while True:
