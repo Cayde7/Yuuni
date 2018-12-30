@@ -8,6 +8,7 @@ startup_extensions = [
 "Cmd.Waifu",
 "Cmd.chat",
 "Cmd.Help",
+"Cmd.info",
 ]
 
 client = discord.Client()
