@@ -21,7 +21,7 @@ class help:
             embed.add_field(name="!waifu: ", value="Yuuni will pick a random person in the discord server and call it best waifu.", inline=False)
             embed.add_field(name="!husbando ", value="Yuuni will pick a random person in the discord server and call it best husbando.", inline=False)
             embed.add_field(name="!userinfo: ", value="Yuuni will give info about the user or someone that he/she calld.", inline=False)
-            await ctx.send_message(author, embed=embed)
+            await ctx.send(author, embed=embed)
         else:
             embed=discord.Embed(color="#FA0293")
             embed.add_field(name="Random word. The random words are:", inline=True)
@@ -34,7 +34,7 @@ class help:
             embed.add_field(name="!waifu: ", value="Yuuni will pick a random person in the discord server and call it best waifu.", inline=False)
             embed.add_field(name="!husbando ", value="Yuuni will pick a random person in the discord server and call it best husbando.", inline=False)
             embed.add_field(name="!userinfo: ", value="Yuuni will give info about the user or someone that he/she calld.", inline=False)
-            await ctx.send_message(author, embed=embed)
+            await ctx.send(author, embed=embed)
 
 def setup(client):
     client.add_cog(help(client))
